@@ -1,0 +1,13 @@
+template(name="fixinBlueprints")
+  if subscriptionsReady
+    ul.fixin-popover-list
+      each blueprints
+        li
+          a(href='#' data-id="{{_id}}")
+            | {{name}}
+            span.fixin-popover-subname {{subname}}
+  else
+    .panel-body
+      h5
+        .fa.fa-fw.fa-refresh.fa-spin
+        | Loading...

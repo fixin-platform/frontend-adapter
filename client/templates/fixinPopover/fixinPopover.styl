@@ -1,0 +1,74 @@
+.fixin-popover
+  overflow: hidden;
+  box-shadow: rgba(0, 0, 0, 0.14902) 0px 1px 6px 0px;
+  width: 400px;
+  background-color: #FFFFFF
+  border: 1px solid rgb(214, 218, 220);
+  border-bottom: 1px solid rgb(196, 201, 204);
+  border-radius: 3px;
+
+.fixin-popover-header
+  padding: 0 10px 0 15px;
+  color: #8c8c8c;
+  a, a:link, a:visited
+    color: #8c8c8c;
+
+.fixin-popover-title, .fixin-popover-back-btn, .fixin-popover-close-btn
+  line-height: 28px;
+
+.fixin-popover-back-btn, .fixin-popover-close-btn
+  color: rgb(153, 153, 153);
+  text-align: center;
+  text-decoration: none;
+  z-index: 2;
+
+.fixin-popover-title
+  max-width: 320px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  z-index: 1;
+  overflow: hidden;
+
+.fixin-popover-back-btn
+  left: 0;
+
+.fixin-popover-close-btn
+  right: 0;
+
+.fixin-popover-divider
+  padding-top: 1px;
+  margin: 5px 1px 0 1px;
+  border-bottom: 1px solid #e1e8ed;
+
+.fixin-popover-list
+  list-style: none outside none;
+  margin: 0px;
+  padding: 10px 0 0 0;
+  a, a:link, a:visited, a:hover, a:active
+    display block
+    cursor: pointer;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 5px 15px;
+  a:hover, a:active
+    color: rgb(255, 255, 255);
+    background-color: rgb(41, 143, 202)
+
+.fixin-popover-subname
+  display: block;
+  clear: both;
+  color: #8c8c8c;
+  font-weight: normal;
+  margin-top: 4px;
+
+.fixin-popover-content
+  .list-group
+    margin 0
+    box-shadow none
+    -webkit-box-shadow none
+  .list-group-item
+    border-top-style: dashed;
+    border-color: #e1e8ed;
+    padding: 15px;
+    &:last-child
+      padding-bottom: 15px - 10px;

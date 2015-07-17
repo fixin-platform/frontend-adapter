@@ -1,0 +1,9 @@
+template(name="fixinPopover")
+  .fixin-popover
+    .fixin-popover-header
+      a.fixin-popover-close-btn.pull-right(href='#'): .fa.fa-fw.fa-lg.fa-times-circle
+      a.fixin-popover-back-btn.pull-right(href='#', style="{{#if isFirstSlide}}display: none;{{/if}}"): .fa.fa-fw.fa-lg.fa-chevron-circle-left
+      .fixin-popover-title {{title}}
+    .fixin-popover-divider
+    .fixin-popover-content
+      +Template.dynamic(template=template data=data)
