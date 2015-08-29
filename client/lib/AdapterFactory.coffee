@@ -42,7 +42,7 @@ AdapterFactory =
         ast = css.parse(content)
         processNode(ast.stylesheet)
         content = css.stringify(ast)
-        $(Foreach.document.head).append(
+        $(Spire.document.head).append(
           $("<style/>",
             type: "text/css"
             text: content
@@ -51,21 +51,21 @@ AdapterFactory =
   injectJs: ->
     for promise in @jsPromises
       promise.done (js) ->
-        evaluator = Foreach.window.execScript or (data) ->
-          Foreach.window["eval"].call(Foreach.window, data)
+        evaluator = Spire.window.execScript or (data) ->
+          Spire.window["eval"].call(Spire.window, data)
         evaluator(js)
   injectLogin: ->
     AT = Package["useraccounts:core"].AccountsTemplates # heck
     AT.avoidRedirect = true # hack
     AT._init() # hock
     AT.setState("signUp") # hick
-    Blaze.renderWithData(Template.extensionWrapper, {template: "login"}, Foreach.document.body)
-    $(Foreach.document.body).find("#loginPopup").on('shown.bs.modal', (event) ->
+    Blaze.renderWithData(Template.extensionWrapper, {template: "login"}, Spire.document.body)
+    $(Spire.document.body).find("#loginPopup").on('shown.bs.modal', (event) ->
       $(document.body).find(".modal-backdrop").insertAfter(event.target)
     )
 
-Foreach.window = window
-Foreach.document = document
+Spire.window = window
+Spire.document = document
 
 baseUrl = location.protocol + "//" + location.hostname + (if location.port then ':' + location.port else '')
 

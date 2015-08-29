@@ -14,7 +14,7 @@ class Adapter
       helpers: _.clone(helpers)
       handlers: _.clone(handlers)
   load: (loader) -> @loaders.push(loader)
-  debug: (pack, loader) -> @loaders.push(loader) if Foreach.isDebug and Meteor.settings.public.pack is pack
+  debug: (pack, loader) -> @loaders.push(loader) if Spire.isDebug and Meteor.settings.public.pack is pack
   handleLoad: -> loader.call(@) for loader in @loaders
   app: -> Apps.findOne({key: @appKey})
   appId: -> @app()._id
@@ -25,8 +25,8 @@ helpers = {}
 
 handlers =
   createDrop: (options) ->
-    if not Foreach.window.FixinDrop
-      Foreach.window.FixinDrop = Foreach.window.Drop.createContext(
+    if not Spire.window.FixinDrop
+      Spire.window.FixinDrop = Spire.window.Drop.createContext(
         classPrefix: "fixin-drop"
       ,
         content: ""
@@ -36,7 +36,7 @@ handlers =
         position: "bottom left"
         classes: "fixin"
       )
-    drop = new Foreach.window.FixinDrop(options)
+    drop = new Spire.window.FixinDrop(options)
     drop.on "open", ->
       $(@drop).css("z-index": 2147483000) # queen of the hill; login modal is the king
       $(@content).addClass(AdapterFactory.current.cssClass)
