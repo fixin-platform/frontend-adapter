@@ -19,10 +19,10 @@ AdapterFactory =
     # TODO: _.uniq for CSS and JS files
     @cssPromises = []
     @cssPromises.push $.ajax($(link).attr("href"), {dataType: "text"}) for link in $("link[rel='stylesheet']")
-    @cssPromises.push $.ajax("/packages/frontend-foundation/public/drop/drop.css", {dataType: "text"})
+    @cssPromises.push $.ajax("/packages/foundation/public/drop/drop.css", {dataType: "text"})
     @cssPromises.push $.ajax(url, {dataType: "text"}) for url in @current.css
     @jsPromises = [] # TODO: now that we have disabled HTTP-on-HTTPS page warnings, we can attach scripts via <script> tag, without evaluator
-    @jsPromises.push $.ajax("/packages/frontend-foundation/public/drop/drop.js", {dataType: "text"})
+    @jsPromises.push $.ajax("/packages/foundation/public/drop/drop.js", {dataType: "text"})
     @jsPromises.push $.ajax(url, {dataType: "text"}) for url in @current.js
   initExtension: (domain) ->
     @setCurrentByDomain(domain)

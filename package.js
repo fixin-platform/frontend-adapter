@@ -1,7 +1,7 @@
 var description = {
   summary: "Frontend Adapter: host app <-> browser extension",
   version: "1.0.0",
-  name: "frontend-adapter"
+  name: "adapter"
 };
 Package.describe(description);
 
@@ -12,7 +12,7 @@ Package.onUse(function(api) {
   addFiles(api, description.name, getDefaultProfiles());
   api.use("oauth");
   api.use(["meteor-platform", "coffeescript", "stylus", "mquandalle:jade@0.4.1", "underscore", "jquery"]);
-  api.use(["frontend-foundation@1.0.0"]);
+  api.use(["foundation@1.0.0"]);
   api.export([
     "AdapterFactory",
     "Adapter"
